@@ -1,0 +1,28 @@
+Paintten ayakkabıların veri tabanı oluşturuldu sadece liste olarak
+türler painten belirlenecek
+   liste olmayanlar seçilecek
+   liste olanlar ayrı seçilecek
+
+proje kurulumu
+gridview geçilecek
+  liste yapısı anlatılacak
+  gridview ve liste bağlantısı yapılacak
+GLOBAL VE PRİVATE FARKI LİSTE ile 
+
+datagridden veri cekme
+satir ve sutuna gore
+seciliye gore
+classa gore- breakpoint
+for ile listedeki yada datagriddeki verilerde gezme arama
+listedeki - datagriddeki verilerin update delete
+
+linq liste kodları
+
+yeni forma açma görüntüleme
+sayfalar arası iletişim 
+sayfalar arası ortak veri kullanımı
+
+sayfayı açık bırakma ve çağırma islemleri
+panel içi form açma
+sql kodlarına
+

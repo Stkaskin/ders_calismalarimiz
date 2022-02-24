@@ -1,0 +1,24 @@
+c# ayakkabı satış 
+ -Liste işlemleri
+ -class bölümi
+ -iş bölümü
+ -kayıtlar ( log ..)
+ -görüntüleme bölümleri 
+ -veritabanı
+SQL
+ -tablo ve tablo işlemleri
+ -sql komutları
+ -db first ve code first 
+ -linq komutları ile işlemler>enei
+Firebase 
+  -SQL deki işlemlerin Firebase halini
+
+Flutter 
+ -iç içe kodlama yapısı
+ -başlangıç
+ -liste
+ -widgetlar ile ufak çaplı fonksiyonel işlemler
+ -firebase ve diğer kütüphane bağlantıları
+ 
+ 
+ 

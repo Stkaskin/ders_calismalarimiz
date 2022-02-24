@@ -1,0 +1,7 @@
+yedekleme
+araştırma 
+okunabilirlik 
+
+daha iyi performanslı ve daha az kod tahminleri
+bol bol hata alınmalı 
+kodlar olabildiğince fonksiyon haline ve farklı classlarda olmalı

@@ -1,0 +1,15 @@
+class
+interface 
+interichinde
+kurucu
+mvc 
+entity 
+firebase
+dinamik
+değişkenler
+püf noktalar 
+mssql veritabanı
+sql codları
+linq codları
+list codları
+partner 

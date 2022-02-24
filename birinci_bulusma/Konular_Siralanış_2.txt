@@ -1,0 +1,42 @@
+Classlar
+Nesne mantığı
+Toolbox-Properties-Events
+Liste 
+Liste ve Class bağlantısı
+EKLE
+Datagridview
+SİL removeat 
+foreach ile id araması
+for ile id araması
+for ve foreach farkı (remove-update)
+
+-GÜNCELLE
+FORM AÇMA VE DİĞER İŞLEMLER
+//show ve showdialog
+//form'a nesne gibi muamele etme
+//forma class gibi muamele etme
+Formlar arası iletişim
+//veri yapar
+Formlar arası ortak veri
+//Application.openforms[""]
+Methodlar parametreleri 
+Classlarda methodlar > İş bölümü
+Classlar arası iletişim
+Class methodunda Log yazma 
+Methodlardaki log kayıtlarını sayısallaştırma
+Alt classlar (-Yazlık-kışlık-Mevsimlik-Spor)
+SQL giriş bağlantılar ekle sil güncelle identity cekme 
+
+SQL db first ve Linq komutları 
+
+
+Satış sayfaları 
+Satış ve Ayakkabılar arası bağlantı
+Satış işlemleri
+Dinamik satış sayfası
+Satışları Loglama
+
+Müşteri Sayfası
+Müşteri ve Satış arasındaki bağlantı
+----SAYISAL OLARAK LOGLAMA
+
