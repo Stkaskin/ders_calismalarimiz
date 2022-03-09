@@ -1,0 +1,14 @@
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.csproj.AssemblyReference.cache
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.Form1.resources
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.Properties.Resources.resources
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.View.Ayakkabi.Ayakkabi_Anaform.resources
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.View.Ayakkabi.Yeni_Ayakkabi.resources
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.csproj.GenerateResource.cache
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.csproj.CoreCompileInputs.cache
+C:\Users\Askin\source\repos\shoe_project\bin\Debug\shoe_project.exe.config
+C:\Users\Askin\source\repos\shoe_project\bin\Debug\shoe_project.exe
+C:\Users\Askin\source\repos\shoe_project\bin\Debug\shoe_project.pdb
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.exe
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.pdb
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.View.Ayakkabi.SQL.Ayakkabi_Anaform_SQL.resources
+C:\Users\Askin\source\repos\shoe_project\obj\Debug\shoe_project.View.Ayakkabi.SQL.Yeni_Ayakkabi_SQL.resources
