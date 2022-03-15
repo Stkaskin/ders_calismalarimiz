@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Shoe_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Marka">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="marka_Ad" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="musteri_AD" Type="nvarchar" MaxLength="50" />
+          <Property Name="musteri_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="musteri_Adres" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Numara">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numara_" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Renk">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="renk_Ad" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Satis_Detay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="urunid" Type="int" />
+          <Property Name="satisid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adet" Type="int" />
+          <Property Name="tutar" Type="int" />
+        </EntityType>
+        <EntityType Name="Satislar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tutar" Type="int" />
+          <Property Name="musteri_ID" Type="int" />
+          <Property Name="tarih" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Urun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="detay_ID" Type="int" />
+          <Property Name="numara_ID" Type="int" />
+          <Property Name="renk_ID" Type="int" />
+          <Property Name="marka_ID" Type="int" />
+          <Property Name="fiyat" Type="int" />
+        </EntityType>
+        <EntityType Name="Urun_Detay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="urun_ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="urun_Ekleme_Tarihi" Type="nvarchar" MaxLength="50" />
+          <Property Name="urun_Temsilcisi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Satis_Detay_Satislar">
+          <End Role="Satislar" Type="Self.Satislar" Multiplicity="1" />
+          <End Role="Satis_Detay" Type="Self.Satis_Detay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Satislar">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Satis_Detay">
+              <PropertyRef Name="satisid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Satis_Detay_Urun">
+          <End Role="Urun" Type="Self.Urun" Multiplicity="0..1" />
+          <End Role="Satis_Detay" Type="Self.Satis_Detay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Urun">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Satis_Detay">
+              <PropertyRef Name="urunid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Satislar_Musteri">
+          <End Role="Musteri" Type="Self.Musteri" Multiplicity="0..1" />
+          <End Role="Satislar" Type="Self.Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteri">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Satislar">
+              <PropertyRef Name="musteri_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Urun_Marka">
+          <End Role="Marka" Type="Self.Marka" Multiplicity="0..1" />
+          <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marka">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Urun">
+              <PropertyRef Name="marka_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Urun_Numara">
+          <End Role="Numara" Type="Self.Numara" Multiplicity="0..1" />
+          <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Numara">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Urun">
+              <PropertyRef Name="numara_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Urun_Renk">
+          <End Role="Renk" Type="Self.Renk" Multiplicity="0..1" />
+          <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Renk">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Urun">
+              <PropertyRef Name="renk_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Urun_Urun_Detay">
+          <End Role="Urun_Detay" Type="Self.Urun_Detay" Multiplicity="0..1" />
+          <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Urun_Detay">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Urun">
+              <PropertyRef Name="detay_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Shoe_DbModelStoreContainer">
+          <EntitySet Name="Marka" EntityType="Self.Marka" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Numara" EntityType="Self.Numara" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Renk" EntityType="Self.Renk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Satis_Detay" EntityType="Self.Satis_Detay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Satislar" EntityType="Self.Satislar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Urun" EntityType="Self.Urun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Urun_Detay" EntityType="Self.Urun_Detay" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Satis_Detay_Satislar" Association="Self.FK_Satis_Detay_Satislar">
+            <End Role="Satislar" EntitySet="Satislar" />
+            <End Role="Satis_Detay" EntitySet="Satis_Detay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Satis_Detay_Urun" Association="Self.FK_Satis_Detay_Urun">
+            <End Role="Urun" EntitySet="Urun" />
+            <End Role="Satis_Detay" EntitySet="Satis_Detay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Satislar_Musteri" Association="Self.FK_Satislar_Musteri">
+            <End Role="Musteri" EntitySet="Musteri" />
+            <End Role="Satislar" EntitySet="Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Urun_Marka" Association="Self.FK_Urun_Marka">
+            <End Role="Marka" EntitySet="Marka" />
+            <End Role="Urun" EntitySet="Urun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Urun_Numara" Association="Self.FK_Urun_Numara">
+            <End Role="Numara" EntitySet="Numara" />
+            <End Role="Urun" EntitySet="Urun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Urun_Renk" Association="Self.FK_Urun_Renk">
+            <End Role="Renk" EntitySet="Renk" />
+            <End Role="Urun" EntitySet="Urun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Urun_Urun_Detay" Association="Self.FK_Urun_Urun_Detay">
+            <End Role="Urun_Detay" EntitySet="Urun_Detay" />
+            <End Role="Urun" EntitySet="Urun" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Shoe_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Marka">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="marka_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Urun" Relationship="Self.FK_Urun_Marka" FromRole="Marka" ToRole="Urun" />
+        </EntityType>
+        <EntityType Name="Musteri">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="musteri_AD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="musteri_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="musteri_Adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Satislar" Relationship="Self.FK_Satislar_Musteri" FromRole="Musteri" ToRole="Satislar" />
+        </EntityType>
+        <EntityType Name="Renk">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="renk_Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Urun" Relationship="Self.FK_Urun_Renk" FromRole="Renk" ToRole="Urun" />
+        </EntityType>
+        <EntityType Name="Satis_Detay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="urunid" Type="Int32" />
+          <Property Name="satisid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adet" Type="Int32" />
+          <Property Name="tutar" Type="Int32" />
+          <NavigationProperty Name="Satislar" Relationship="Self.FK_Satis_Detay_Satislar" FromRole="Satis_Detay" ToRole="Satislar" />
+          <NavigationProperty Name="Urun" Relationship="Self.FK_Satis_Detay_Urun" FromRole="Satis_Detay" ToRole="Urun" />
+        </EntityType>
+        <EntityType Name="Satislar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tutar" Type="Int32" />
+          <Property Name="musteri_ID" Type="Int32" />
+          <Property Name="tarih" Type="Int32" />
+          <NavigationProperty Name="Musteri" Relationship="Self.FK_Satislar_Musteri" FromRole="Satislar" ToRole="Musteri" />
+          <NavigationProperty Name="Satis_Detay" Relationship="Self.FK_Satis_Detay_Satislar" FromRole="Satislar" ToRole="Satis_Detay" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Urun">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="detay_ID" Type="Int32" />
+          <Property Name="numara_ID" Type="Int32" />
+          <Property Name="renk_ID" Type="Int32" />
+          <Property Name="marka_ID" Type="Int32" />
+          <Property Name="fiyat" Type="Int32" />
+          <NavigationProperty Name="Marka" Relationship="Self.FK_Urun_Marka" FromRole="Urun" ToRole="Marka" />
+          <NavigationProperty Name="Renk" Relationship="Self.FK_Urun_Renk" FromRole="Urun" ToRole="Renk" />
+          <NavigationProperty Name="Satis_Detay" Relationship="Self.FK_Satis_Detay_Urun" FromRole="Urun" ToRole="Satis_Detay" />
+          <NavigationProperty Name="Urun_Detay" Relationship="Self.FK_Urun_Urun_Detay" FromRole="Urun" ToRole="Urun_Detay" />
+          <NavigationProperty Name="Numara" Relationship="Shoe_DbModel.FK_Urun_Numara" FromRole="Urun" ToRole="Numara" />
+        </EntityType>
+        <EntityType Name="Urun_Detay">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="urun_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="urun_Ekleme_Tarihi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="urun_Temsilcisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Urun" Relationship="Self.FK_Urun_Urun_Detay" FromRole="Urun_Detay" ToRole="Urun" />
+        </EntityType>
+        <Association Name="FK_Urun_Marka">
+          <End Role="Marka" Type="Self.Marka" Multiplicity="0..1" />
+          <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marka">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Urun">
+              <PropertyRef Name="marka_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Satislar_Musteri">
+          <End Role="Musteri" Type="Self.Musteri" Multiplicity="0..1" />
+          <End Role="Satislar" Type="Self.Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Musteri">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Satislar">
+              <PropertyRef Name="musteri_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Urun_Renk">
+          <End Role="Renk" Type="Self.Renk" Multiplicity="0..1" />
+          <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Renk">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Urun">
+              <PropertyRef Name="renk_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Satis_Detay_Satislar">
+          <End Role="Satislar" Type="Self.Satislar" Multiplicity="1" />
+          <End Role="Satis_Detay" Type="Self.Satis_Detay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Satislar">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Satis_Detay">
+              <PropertyRef Name="satisid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Satis_Detay_Urun">
+          <End Role="Urun" Type="Self.Urun" Multiplicity="0..1" />
+          <End Role="Satis_Detay" Type="Self.Satis_Detay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Urun">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Satis_Detay">
+              <PropertyRef Name="urunid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Urun_Urun_Detay">
+          <End Role="Urun_Detay" Type="Self.Urun_Detay" Multiplicity="0..1" />
+          <End Role="Urun" Type="Self.Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Urun_Detay">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Urun">
+              <PropertyRef Name="detay_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Shoe_DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Marka" EntityType="Self.Marka" />
+          <EntitySet Name="Musteri" EntityType="Self.Musteri" />
+          <EntitySet Name="Renk" EntityType="Self.Renk" />
+          <EntitySet Name="Satis_Detay" EntityType="Self.Satis_Detay" />
+          <EntitySet Name="Satislar" EntityType="Self.Satislar" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Urun" EntityType="Self.Urun" />
+          <EntitySet Name="Urun_Detay" EntityType="Self.Urun_Detay" />
+          <AssociationSet Name="FK_Urun_Marka" Association="Self.FK_Urun_Marka">
+            <End Role="Marka" EntitySet="Marka" />
+            <End Role="Urun" EntitySet="Urun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Satislar_Musteri" Association="Self.FK_Satislar_Musteri">
+            <End Role="Musteri" EntitySet="Musteri" />
+            <End Role="Satislar" EntitySet="Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Urun_Renk" Association="Self.FK_Urun_Renk">
+            <End Role="Renk" EntitySet="Renk" />
+            <End Role="Urun" EntitySet="Urun" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Satis_Detay_Satislar" Association="Self.FK_Satis_Detay_Satislar">
+            <End Role="Satislar" EntitySet="Satislar" />
+            <End Role="Satis_Detay" EntitySet="Satis_Detay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Satis_Detay_Urun" Association="Self.FK_Satis_Detay_Urun">
+            <End Role="Urun" EntitySet="Urun" />
+            <End Role="Satis_Detay" EntitySet="Satis_Detay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Urun_Urun_Detay" Association="Self.FK_Urun_Urun_Detay">
+            <End Role="Urun_Detay" EntitySet="Urun_Detay" />
+            <End Role="Urun" EntitySet="Urun" />
+          </AssociationSet>
+          <EntitySet Name="Numara" EntityType="Shoe_DbModel.Numara" />
+          <AssociationSet Name="FK_Urun_Numara" Association="Shoe_DbModel.FK_Urun_Numara">
+            <End Role="Numara" EntitySet="Numara" />
+            <End Role="Urun" EntitySet="Urun" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Numara">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numara_" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Urun" Relationship="Shoe_DbModel.FK_Urun_Numara" FromRole="Numara" ToRole="Urun" />
+        </EntityType>
+        <Association Name="FK_Urun_Numara">
+          <End Type="Shoe_DbModel.Numara" Role="Numara" Multiplicity="0..1" />
+          <End Type="Shoe_DbModel.Urun" Role="Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Numara">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Urun">
+              <PropertyRef Name="numara_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Shoe_DbModelStoreContainer" CdmEntityContainer="Shoe_DbEntities">
+          <EntitySetMapping Name="Marka">
+            <EntityTypeMapping TypeName="Shoe_DbModel.Marka">
+              <MappingFragment StoreEntitySet="Marka">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="marka_Ad" ColumnName="marka_Ad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Musteri">
+            <EntityTypeMapping TypeName="Shoe_DbModel.Musteri">
+              <MappingFragment StoreEntitySet="Musteri">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="musteri_AD" ColumnName="musteri_AD" />
+                <ScalarProperty Name="musteri_Tel" ColumnName="musteri_Tel" />
+                <ScalarProperty Name="musteri_Adres" ColumnName="musteri_Adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Renk">
+            <EntityTypeMapping TypeName="Shoe_DbModel.Renk">
+              <MappingFragment StoreEntitySet="Renk">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="renk_Ad" ColumnName="renk_Ad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Satis_Detay">
+            <EntityTypeMapping TypeName="Shoe_DbModel.Satis_Detay">
+              <MappingFragment StoreEntitySet="Satis_Detay">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="urunid" ColumnName="urunid" />
+                <ScalarProperty Name="satisid" ColumnName="satisid" />
+                <ScalarProperty Name="adet" ColumnName="adet" />
+                <ScalarProperty Name="tutar" ColumnName="tutar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Satislar">
+            <EntityTypeMapping TypeName="Shoe_DbModel.Satislar">
+              <MappingFragment StoreEntitySet="Satislar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="tutar" ColumnName="tutar" />
+                <ScalarProperty Name="musteri_ID" ColumnName="musteri_ID" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Shoe_DbModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Urun">
+            <EntityTypeMapping TypeName="Shoe_DbModel.Urun">
+              <MappingFragment StoreEntitySet="Urun">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="detay_ID" ColumnName="detay_ID" />
+                <ScalarProperty Name="numara_ID" ColumnName="numara_ID" />
+                <ScalarProperty Name="renk_ID" ColumnName="renk_ID" />
+                <ScalarProperty Name="marka_ID" ColumnName="marka_ID" />
+                <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Urun_Detay">
+            <EntityTypeMapping TypeName="Shoe_DbModel.Urun_Detay">
+              <MappingFragment StoreEntitySet="Urun_Detay">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="urun_ad" ColumnName="urun_ad" />
+                <ScalarProperty Name="urun_Ekleme_Tarihi" ColumnName="urun_Ekleme_Tarihi" />
+                <ScalarProperty Name="urun_Temsilcisi" ColumnName="urun_Temsilcisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Numara">
+            <EntityTypeMapping TypeName="Shoe_DbModel.Numara">
+              <MappingFragment StoreEntitySet="Numara">
+                <ScalarProperty Name="numara_" ColumnName="numara_" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

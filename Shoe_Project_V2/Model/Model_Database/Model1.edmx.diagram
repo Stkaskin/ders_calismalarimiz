@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fe0f4bc212e847abbc5a85b0d047b4d9" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="Shoe_DbModel.Marka" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Musteri" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Renk" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Satis_Detay" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Satislar" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.sysdiagrams" Width="1.5" PointX="6.625" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Urun" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Urun_Detay" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <AssociationConnector Association="Shoe_DbModel.FK_Urun_Marka" ManuallyRouted="false" />
+        <AssociationConnector Association="Shoe_DbModel.FK_Satislar_Musteri" ManuallyRouted="false" />
+        <AssociationConnector Association="Shoe_DbModel.FK_Urun_Renk" ManuallyRouted="false" />
+        <AssociationConnector Association="Shoe_DbModel.FK_Satis_Detay_Satislar" ManuallyRouted="false" />
+        <AssociationConnector Association="Shoe_DbModel.FK_Satis_Detay_Urun" ManuallyRouted="false" />
+        <AssociationConnector Association="Shoe_DbModel.FK_Urun_Urun_Detay" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Numara" Width="1.5" PointX="3.375" PointY="5.875" />
+        <AssociationConnector Association="Shoe_DbModel.FK_Urun_Numara" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
