@@ -17,8 +17,10 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
         List<Marka> markalar = new List<Marka>();
         List<Numara> numaralar = new List<Numara>();
         List<Renk> renkler = new List<Renk>();
+        List<ayakkabi_data> ayakkabilar = new List<ayakkabi_data>();
         ayakkabi_data urun_sil = new ayakkabi_data();
         ayakkabi_data urun_guncelle = new ayakkabi_data();
+        BindingSource source = new BindingSource();
         public Ayakkabi_Form()
         {
             InitializeComponent();
@@ -33,33 +35,19 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             ///son eklenen detayın idsini urun tablosuna göndermemiz gerekecektir
             Urun_Detay urun = new Urun_Detay
             {
-                urun_ad = "Yeni logolu ürün"
-
-
+                urun_ad = ad_e_tb.Text,
+                urun_Ekleme_Tarihi = DateTime.Now.ToString(),
+                urun_Temsilcisi = "yok"
             };
 
             db.Urun_Detay.Add(urun);
             db.SaveChanges();
-            Marka marka = new Marka();
-            marka.marka_Ad = "marka1";
-
-            Renk renk = new Renk();
-            renk.renk_Ad = "renk1";
-
-            Numara numara = new Numara();
-            numara.numara_ = 21;
-            db.Numara.Add(numara);
-            db.Renk.Add(renk);
-            db.Marka.Add(marka);
-            db.SaveChanges();
-
-
             db.Urun.Add(new Urun
             {
                 detay_ID = urun.ID,
-                marka_ID = marka.ID,
-                renk_ID = renk.ID,
-                numara_ID = numara.ID
+                marka_ID = Convert.ToInt32(marka_e_combo.SelectedValue),
+                renk_ID = Convert.ToInt32(renk_e_combo.SelectedValue),
+                numara_ID = Convert.ToInt32(numara_e_combo.SelectedValue)
             });
             db.SaveChanges();
             //zorunlu ilişki yaptıgımız için ürünün markası rengi ve numarasını zorunlu kılmış
@@ -110,35 +98,48 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
 
 
         }
+        private void ayakkabilar_doldur() 
+        {
+            ayakkabilar = (from a in db.Urun
+                               /*  // ilişkiyi elle kurmak istersek bunları kullanabiliriz
+                              //  join b in db.Urun_Detay on a.detay_ID equals b.ID */
+                           select new ayakkabi_data
+                           {
+                               ID = a.ID,
+                               Ürün_Adi = a.Urun_Detay.urun_ad,
+                               Marka = a.Marka.marka_Ad,
+                               Renk = a.Renk.renk_Ad,
+                               Renk_ID = a.renk_ID,
+                               Marka_ID = a.marka_ID,
+                               Numara_ID = a.numara_ID,
+                               Numara = a.Numara.numara_,
+                               Fiyat = a.fiyat,
+                               Ürün_ID = a.detay_ID,
+
+
+                           }).ToList();
+        }
         private void datagrid_operasyonları()
         {
-            var tbl = from a in db.Urun
-                          /*  // ilişkiyi elle kurmak istersek bunları kullanabiliriz
-                         //  join b in db.Urun_Detay on a.detay_ID equals b.ID */
-                      select new ayakkabi_data
-                      {
-                          ID = a.ID,
-                          Ürün = a.Urun_Detay.urun_ad,
-                          Marka = a.Marka.marka_Ad,
-                          Renk = a.Renk.renk_Ad,
-                          Renk_ID = a.renk_ID,
-                          Marka_ID = a.marka_ID,
-                          Numara_ID = a.numara_ID,
-                          Numara = a.Numara.numara_,
-                          Fiyat = a.fiyat
+            //  button1.PerformClick();
+            ayakkabilar_doldur();
+            source.DataSource = ayakkabilar.ToList();
+            gridview_ayarla();
 
-                      };
-            dataGridView1.DataSource = tbl.ToList();
+
+        }
+        private void gridview_ayarla() 
+        {
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
+            // or even better, use .DisableResizing. Most time consuming enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+            // set it to false if not needed
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.DataSource = source;
+            //column name list ile gizleme denemeleri ilerde yapılacak 
             dataGridView1.Columns["Marka_ID"].Visible = false;
             dataGridView1.Columns["Numara_ID"].Visible = false;
             dataGridView1.Columns["Renk_ID"].Visible = false;
-
-            marka_s_tb.DataBindings.Add("Text", dataGridView1.DataSource, "Marka");
-            renk_s_tb.DataBindings.Add("Text", dataGridView1.DataSource, "Renk");
-            numara_s_tb.DataBindings.Add("Text", dataGridView1.DataSource, "Numara");
-            ad_s_tb.DataBindings.Add("Text", dataGridView1.DataSource, "Ürün");
-            id_s_tb.DataBindings.Add("Text", dataGridView1.DataSource, "ID");
-            fiyat_s_tb.DataBindings.Add("Text", dataGridView1.DataSource, "Fiyat");
+            dataGridView1.Columns["Ürün_ID"].Visible = false;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -148,6 +149,37 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             marka_g_combo.SelectedValue = urun_guncelle.Marka_ID;
             renk_g_combo.SelectedValue = urun_guncelle.Renk_ID;
             numara_g_combo.SelectedValue = urun_guncelle.Numara_ID;
+            ad_s_tb.Text = ad_g_tb.Text = urun_sil.Ürün_Adi;
+            fiyat_s_tb.Text = fiyat_g_tb.Text = urun_sil.Fiyat + "";
+            id_s_tb.Text = id_g_tb.Text = urun_sil.ID.ToString();
+            marka_s_tb.Text = urun_sil.Marka;
+            numara_s_tb.Text = urun_sil.Numara + "";
+            renk_s_tb.Text = urun_sil.Renk;
+        }
+
+        private void sil_btn_Click(object sender, EventArgs e)
+        {
+            Urun_Detay detay = db.Urun_Detay.Find(Convert.ToInt32(urun_sil.Ürün_ID));
+            Urun urun = db.Urun.Find(urun_guncelle.ID);
+            db.Urun.Remove(urun);
+            db.Urun_Detay.Remove(detay);
+            db.SaveChanges();
+            ayakkabilar_doldur();
+            source.DataSource = ayakkabilar;
+        }
+
+        private void guncelle_btn_Click(object sender, EventArgs e)
+        {
+            Urun_Detay detay = db.Urun_Detay.Find(urun_guncelle.Ürün_ID);
+            Urun urun = db.Urun.Find(urun_guncelle.ID);
+            detay.urun_ad = ad_g_tb.Text;
+            urun.numara_ID = Convert.ToInt32(numara_g_combo.SelectedValue);
+            urun.marka_ID = Convert.ToInt32(marka_g_combo.SelectedValue);
+            urun.renk_ID = Convert.ToInt32(renk_g_combo.SelectedValue);
+            urun.fiyat = Convert.ToInt32(fiyat_g_tb.Text);
+            db.SaveChanges();
+            ayakkabilar_doldur();
+            source.DataSource = ayakkabilar;
         }
     }
 }

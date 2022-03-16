@@ -41,8 +41,8 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.numara_e_combo = new System.Windows.Forms.ComboBox();
             this.renk_e_combo = new System.Windows.Forms.ComboBox();
             this.marka_e_combo = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fiyat_e_tb = new System.Windows.Forms.TextBox();
+            this.ad_e_tb = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,10 +53,10 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.numara_g_combo = new System.Windows.Forms.ComboBox();
             this.renk_g_combo = new System.Windows.Forms.ComboBox();
             this.marka_g_combo = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.id_g_tb = new System.Windows.Forms.TextBox();
+            this.fiyat_g_tb = new System.Windows.Forms.TextBox();
             this.ad_g_tb = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.guncelle_btn = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.numara_s_tb = new System.Windows.Forms.TextBox();
             this.renk_s_tb = new System.Windows.Forms.TextBox();
@@ -70,7 +70,7 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.id_s_tb = new System.Windows.Forms.TextBox();
             this.fiyat_s_tb = new System.Windows.Forms.TextBox();
             this.ad_s_tb = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.sil_btn = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.TabControl1.SuspendLayout();
@@ -120,8 +120,8 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.tabPage1.Controls.Add(this.numara_e_combo);
             this.tabPage1.Controls.Add(this.renk_e_combo);
             this.tabPage1.Controls.Add(this.marka_e_combo);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.fiyat_e_tb);
+            this.tabPage1.Controls.Add(this.ad_e_tb);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -200,19 +200,19 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.marka_e_combo.Size = new System.Drawing.Size(128, 21);
             this.marka_e_combo.TabIndex = 3;
             // 
-            // textBox2
+            // fiyat_e_tb
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 20);
-            this.textBox2.TabIndex = 2;
+            this.fiyat_e_tb.Location = new System.Drawing.Point(75, 57);
+            this.fiyat_e_tb.Name = "fiyat_e_tb";
+            this.fiyat_e_tb.Size = new System.Drawing.Size(128, 20);
+            this.fiyat_e_tb.TabIndex = 2;
             // 
-            // textBox1
+            // ad_e_tb
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 20);
-            this.textBox1.TabIndex = 2;
+            this.ad_e_tb.Location = new System.Drawing.Point(75, 27);
+            this.ad_e_tb.Name = "ad_e_tb";
+            this.ad_e_tb.Size = new System.Drawing.Size(128, 20);
+            this.ad_e_tb.TabIndex = 2;
             // 
             // tabPage2
             // 
@@ -225,10 +225,10 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.tabPage2.Controls.Add(this.numara_g_combo);
             this.tabPage2.Controls.Add(this.renk_g_combo);
             this.tabPage2.Controls.Add(this.marka_g_combo);
-            this.tabPage2.Controls.Add(this.textBox8);
-            this.tabPage2.Controls.Add(this.textBox3);
+            this.tabPage2.Controls.Add(this.id_g_tb);
+            this.tabPage2.Controls.Add(this.fiyat_g_tb);
             this.tabPage2.Controls.Add(this.ad_g_tb);
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.guncelle_btn);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -315,20 +315,20 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.marka_g_combo.Size = new System.Drawing.Size(128, 21);
             this.marka_g_combo.TabIndex = 10;
             // 
-            // textBox8
+            // id_g_tb
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(84, 32);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(128, 20);
-            this.textBox8.TabIndex = 7;
+            this.id_g_tb.Enabled = false;
+            this.id_g_tb.Location = new System.Drawing.Point(84, 32);
+            this.id_g_tb.Name = "id_g_tb";
+            this.id_g_tb.Size = new System.Drawing.Size(128, 20);
+            this.id_g_tb.TabIndex = 7;
             // 
-            // textBox3
+            // fiyat_g_tb
             // 
-            this.textBox3.Location = new System.Drawing.Point(84, 92);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 20);
-            this.textBox3.TabIndex = 6;
+            this.fiyat_g_tb.Location = new System.Drawing.Point(84, 92);
+            this.fiyat_g_tb.Name = "fiyat_g_tb";
+            this.fiyat_g_tb.Size = new System.Drawing.Size(128, 20);
+            this.fiyat_g_tb.TabIndex = 6;
             // 
             // ad_g_tb
             // 
@@ -337,14 +337,15 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.ad_g_tb.Size = new System.Drawing.Size(128, 20);
             this.ad_g_tb.TabIndex = 7;
             // 
-            // button2
+            // guncelle_btn
             // 
-            this.button2.Location = new System.Drawing.Point(84, 355);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "EKLE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.guncelle_btn.Location = new System.Drawing.Point(84, 355);
+            this.guncelle_btn.Name = "guncelle_btn";
+            this.guncelle_btn.Size = new System.Drawing.Size(75, 23);
+            this.guncelle_btn.TabIndex = 5;
+            this.guncelle_btn.Text = "Güncelle";
+            this.guncelle_btn.UseVisualStyleBackColor = true;
+            this.guncelle_btn.Click += new System.EventHandler(this.guncelle_btn_Click);
             // 
             // tabPage3
             // 
@@ -360,7 +361,7 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.tabPage3.Controls.Add(this.id_s_tb);
             this.tabPage3.Controls.Add(this.fiyat_s_tb);
             this.tabPage3.Controls.Add(this.ad_s_tb);
-            this.tabPage3.Controls.Add(this.button3);
+            this.tabPage3.Controls.Add(this.sil_btn);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -471,14 +472,15 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             this.ad_s_tb.Size = new System.Drawing.Size(128, 20);
             this.ad_s_tb.TabIndex = 7;
             // 
-            // button3
+            // sil_btn
             // 
-            this.button3.Location = new System.Drawing.Point(125, 345);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "EKLE";
-            this.button3.UseVisualStyleBackColor = true;
+            this.sil_btn.Location = new System.Drawing.Point(125, 345);
+            this.sil_btn.Name = "sil_btn";
+            this.sil_btn.Size = new System.Drawing.Size(75, 23);
+            this.sil_btn.TabIndex = 5;
+            this.sil_btn.Text = "Sil";
+            this.sil_btn.UseVisualStyleBackColor = true;
+            this.sil_btn.Click += new System.EventHandler(this.sil_btn_Click);
             // 
             // tabPage4
             // 
@@ -526,8 +528,8 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
         private System.Windows.Forms.ComboBox numara_e_combo;
         private System.Windows.Forms.ComboBox renk_e_combo;
         private System.Windows.Forms.ComboBox marka_e_combo;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox fiyat_e_tb;
+        private System.Windows.Forms.TextBox ad_e_tb;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -538,10 +540,10 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
         private System.Windows.Forms.ComboBox numara_g_combo;
         private System.Windows.Forms.ComboBox renk_g_combo;
         private System.Windows.Forms.ComboBox marka_g_combo;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox id_g_tb;
+        private System.Windows.Forms.TextBox fiyat_g_tb;
         private System.Windows.Forms.TextBox ad_g_tb;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button guncelle_btn;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -552,7 +554,7 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
         private System.Windows.Forms.TextBox id_s_tb;
         private System.Windows.Forms.TextBox fiyat_s_tb;
         private System.Windows.Forms.TextBox ad_s_tb;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button sil_btn;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TextBox marka_s_tb;
         private System.Windows.Forms.TextBox numara_s_tb;
