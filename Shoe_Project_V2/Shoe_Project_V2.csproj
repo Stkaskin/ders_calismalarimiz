@@ -130,11 +130,11 @@
     <Compile Include="View\Ayakkabi_Formlar\Ayakkabi_Form.Designer.cs">
       <DependentUpon>Ayakkabi_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Musteri_Formlar\Musteriler.cs">
+    <Compile Include="View\Musteri_Formlar\Musteriler_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Musteri_Formlar\Musteriler.Designer.cs">
-      <DependentUpon>Musteriler.cs</DependentUpon>
+    <Compile Include="View\Musteri_Formlar\Musteriler_Form.Designer.cs">
+      <DependentUpon>Musteriler_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Satis_Formlar\Satislar_Form.cs">
       <SubType>Form</SubType>
@@ -142,11 +142,11 @@
     <Compile Include="View\Satis_Formlar\Satislar_Form.Designer.cs">
       <DependentUpon>Satislar_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Satis_Formlar\Satis_Detay.cs">
+    <Compile Include="View\Satis_Formlar\Satis_Detay_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Satis_Formlar\Satis_Detay.Designer.cs">
-      <DependentUpon>Satis_Detay.cs</DependentUpon>
+    <Compile Include="View\Satis_Formlar\Satis_Detay_Form.Designer.cs">
+      <DependentUpon>Satis_Detay_Form.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -172,14 +172,14 @@
     <EmbeddedResource Include="View\Ayakkabi_Formlar\Ayakkabi_Form.resx">
       <DependentUpon>Ayakkabi_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Musteri_Formlar\Musteriler.resx">
-      <DependentUpon>Musteriler.cs</DependentUpon>
+    <EmbeddedResource Include="View\Musteri_Formlar\Musteriler_Form.resx">
+      <DependentUpon>Musteriler_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Satis_Formlar\Satislar_Form.resx">
       <DependentUpon>Satislar_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Satis_Formlar\Satis_Detay.resx">
-      <DependentUpon>Satis_Detay.cs</DependentUpon>
+    <EmbeddedResource Include="View\Satis_Formlar\Satis_Detay_Form.resx">
+      <DependentUpon>Satis_Detay_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Model_Database\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

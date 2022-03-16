@@ -28,11 +28,11 @@ namespace Shoe_Project_V2.Model.Model_Database
         public virtual DbSet<Marka> Marka { get; set; }
         public virtual DbSet<Musteri> Musteri { get; set; }
         public virtual DbSet<Renk> Renk { get; set; }
-        public virtual DbSet<Satis_Detay> Satis_Detay { get; set; }
         public virtual DbSet<Satislar> Satislar { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Urun> Urun { get; set; }
         public virtual DbSet<Urun_Detay> Urun_Detay { get; set; }
         public virtual DbSet<Numara> Numara { get; set; }
+        public virtual DbSet<Satis_Detay> Satis_Detay { get; set; }
     }
 }

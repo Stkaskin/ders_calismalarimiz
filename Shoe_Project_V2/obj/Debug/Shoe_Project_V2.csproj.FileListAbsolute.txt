@@ -8,7 +8,6 @@ C:\Users\Askin\source\repos\Shoe_Project_V2\bin\Debug\EntityFramework.SqlServer.
 C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.csproj.AssemblyReference.cache
 C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.Properties.Resources.resources
 C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.View.Anaform.resources
-C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.View.Musteri_Formlar.Musteriler.resources
 C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.csproj.GenerateResource.cache
 C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.csproj.CoreCompileInputs.cache
 C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.csproj.CopyComplete
@@ -19,4 +18,5 @@ C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.View.Satis
 C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.View.Ayakkabi_Formlar.Ayakkabi_Detaylari.Marka_Form.resources
 C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.View.Ayakkabi_Formlar.Ayakkabi_Detaylari.Numara_Form.resources
 C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.View.Ayakkabi_Formlar.Ayakkabi_Detaylari.Renk_Form.resources
-C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.View.Satis_Formlar.Satis_Detay.resources
+C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.View.Musteri_Formlar.Musteriler_Form.resources
+C:\Users\Askin\source\repos\Shoe_Project_V2\obj\Debug\Shoe_Project_V2.View.Satis_Formlar.Satis_Detay_Form.resources

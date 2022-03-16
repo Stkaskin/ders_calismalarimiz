@@ -21,7 +21,7 @@ namespace Shoe_Project_V2.Model.Model_Database
         }
     
         public int ID { get; set; }
-        public int numara_ { get; set; }
+        public Nullable<int> numara_ { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Urun> Urun { get; set; }

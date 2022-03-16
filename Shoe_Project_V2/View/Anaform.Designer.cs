@@ -33,14 +33,14 @@ namespace Shoe_Project_V2.View
             this.musteriler_btn = new System.Windows.Forms.Button();
             this.satislar_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.numara_btn = new System.Windows.Forms.Button();
             this.renk_btn = new System.Windows.Forms.Button();
             this.marka_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,7 @@ namespace Shoe_Project_V2.View
             this.satislar_btn.TabIndex = 3;
             this.satislar_btn.Text = "SATIŞLAR";
             this.satislar_btn.UseVisualStyleBackColor = true;
+            this.satislar_btn.Click += new System.EventHandler(this.satislar_btn_Click);
             // 
             // panel1
             // 
@@ -89,6 +90,24 @@ namespace Shoe_Project_V2.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(185, 747);
             this.panel1.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(20, 562);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(138, 42);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Geri Dönüşüm Kutusu";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(20, 637);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 42);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "LOG";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -148,24 +167,6 @@ namespace Shoe_Project_V2.View
             this.label1.Size = new System.Drawing.Size(98, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Sayfa Adı";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(20, 637);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 42);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "LOG";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(20, 562);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 42);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Geri Dönüşüm Kutusu";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // Anaform
             // 

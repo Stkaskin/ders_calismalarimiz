@@ -20,7 +20,7 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
         public int? Marka_ID { get; set; }
         public string Renk { get; set; }
         public int? Renk_ID { get; set; }
-        public int Numara { get; set; }
+        public int? Numara { get; set; }
         public int? Numara_ID { get; set; }
         
         public int? Fiyat { get;set; }

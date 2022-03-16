@@ -59,7 +59,7 @@ namespace Shoe_Project_V2.View
 
         private void musteriler_btn_Click(object sender, EventArgs e)
         {
-            SayfaGetir(new Musteriler());
+            SayfaGetir(new Musteriler_Form());
         }
 
         private void marka_btn_Click(object sender, EventArgs e)
@@ -94,6 +94,11 @@ namespace Shoe_Project_V2.View
                 panel1.Size = new Size(200, 5000);
                     panel2.Location = new Point(panel1.Width + 20, 30);
             }
+        }
+
+        private void satislar_btn_Click(object sender, EventArgs e)
+        {
+            SayfaGetir(new Satis_Formlar.Satislar_Form());
         }
     }
 }

@@ -27,17 +27,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Satis_Detay">
-      <EntityTypeMapping TypeName="Shoe_DbModel.Satis_Detay">
-        <MappingFragment StoreEntitySet="Satis_Detay">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="urunid" ColumnName="urunid" />
-          <ScalarProperty Name="satisid" ColumnName="satisid" />
-          <ScalarProperty Name="adet" ColumnName="adet" />
-          <ScalarProperty Name="tutar" ColumnName="tutar" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Satislar">
       <EntityTypeMapping TypeName="Shoe_DbModel.Satislar">
         <MappingFragment StoreEntitySet="Satislar">
@@ -85,6 +74,17 @@
       <EntityTypeMapping TypeName="Shoe_DbModel.Numara">
         <MappingFragment StoreEntitySet="Numara">
           <ScalarProperty Name="numara_" ColumnName="numara_" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Satis_Detay">
+      <EntityTypeMapping TypeName="Shoe_DbModel.Satis_Detay">
+        <MappingFragment StoreEntitySet="Satis_Detay">
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+          <ScalarProperty Name="satisid" ColumnName="satisid" />
+          <ScalarProperty Name="urunid" ColumnName="urunid" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

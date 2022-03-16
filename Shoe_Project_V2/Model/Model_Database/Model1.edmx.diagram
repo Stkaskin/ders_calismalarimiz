@@ -5,22 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="fe0f4bc212e847abbc5a85b0d047b4d9" Name="Diagram1" ZoomLevel="101">
-        <EntityTypeShape EntityType="Shoe_DbModel.Marka" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shoe_DbModel.Musteri" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shoe_DbModel.Renk" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shoe_DbModel.Satis_Detay" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shoe_DbModel.Satislar" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shoe_DbModel.sysdiagrams" Width="1.5" PointX="6.625" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shoe_DbModel.Urun" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Shoe_DbModel.Urun_Detay" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
-        <AssociationConnector Association="Shoe_DbModel.FK_Urun_Marka" ManuallyRouted="false" />
-        <AssociationConnector Association="Shoe_DbModel.FK_Satislar_Musteri" ManuallyRouted="false" />
-        <AssociationConnector Association="Shoe_DbModel.FK_Urun_Renk" ManuallyRouted="false" />
-        <AssociationConnector Association="Shoe_DbModel.FK_Satis_Detay_Satislar" ManuallyRouted="false" />
-        <AssociationConnector Association="Shoe_DbModel.FK_Satis_Detay_Urun" ManuallyRouted="false" />
-        <AssociationConnector Association="Shoe_DbModel.FK_Urun_Urun_Detay" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Shoe_DbModel.Numara" Width="1.5" PointX="3.375" PointY="5.875" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Marka" PointX="0.75" PointY="1.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Musteri" PointX="0.75" PointY="12.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Renk" PointX="0.75" PointY="7.25" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Satislar" PointX="3" PointY="12.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.sysdiagrams" PointX="2.75" PointY="5.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Urun" PointX="3" PointY="1" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Urun_Detay" PointX="0.75" PointY="9.625" Width="1.5" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="Shoe_DbModel.FK_Urun_Marka" />
+        <AssociationConnector ManuallyRouted="false" Association="Shoe_DbModel.FK_Satislar_Musteri" />
+        <AssociationConnector ManuallyRouted="false" Association="Shoe_DbModel.FK_Urun_Renk" />
+        <AssociationConnector ManuallyRouted="false" Association="Shoe_DbModel.FK_Urun_Urun_Detay" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Numara" PointX="0.75" PointY="4.875" Width="1.5" />
         <AssociationConnector Association="Shoe_DbModel.FK_Urun_Numara" />
+        <EntityTypeShape EntityType="Shoe_DbModel.Satis_Detay" Width="1.5" PointX="5.25" PointY="6.625" />
+        <AssociationConnector Association="Shoe_DbModel.FK_Satis_Detay_Satislar" />
+        <AssociationConnector Association="Shoe_DbModel.FK_Satis_Detay_Urun" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

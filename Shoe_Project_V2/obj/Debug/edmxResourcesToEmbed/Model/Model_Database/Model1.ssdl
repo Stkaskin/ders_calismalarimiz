@@ -21,7 +21,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="numara_" Type="int" Nullable="false" />
+    <Property Name="numara_" Type="int" />
   </EntityType>
   <EntityType Name="Renk">
     <Key>
@@ -34,9 +34,9 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="urunid" Type="int" />
-    <Property Name="satisid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="satisid" Type="int" />
     <Property Name="adet" Type="int" />
     <Property Name="tutar" Type="int" />
   </EntityType>
@@ -80,7 +80,7 @@
     <Property Name="urun_Temsilcisi" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Satis_Detay_Satislar">
-    <End Role="Satislar" Type="Self.Satislar" Multiplicity="1" />
+    <End Role="Satislar" Type="Self.Satislar" Multiplicity="0..1" />
     <End Role="Satis_Detay" Type="Self.Satis_Detay" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Satislar">

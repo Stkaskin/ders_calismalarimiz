@@ -16,7 +16,7 @@ namespace Shoe_Project_V2.Model.Model_Database
     {
         public int ID { get; set; }
         public Nullable<int> urunid { get; set; }
-        public int satisid { get; set; }
+        public Nullable<int> satisid { get; set; }
         public Nullable<int> adet { get; set; }
         public Nullable<int> tutar { get; set; }
     
