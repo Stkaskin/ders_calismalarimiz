@@ -15,6 +15,13 @@ namespace Shoe_Project_V2.View
 {
     public partial class Anaform : Form
     {
+        public BindingSource ayakkabiSource = new BindingSource();
+        public BindingSource satislarSource = new BindingSource();
+        public BindingSource markalarSource = new BindingSource();
+        public BindingSource renklerSource = new BindingSource();
+        public BindingSource numaralarSource = new BindingSource();
+        public BindingSource loglarSource = new BindingSource();
+        public BindingSource copSource = new BindingSource();
         public Anaform()
         {
             InitializeComponent();
@@ -28,14 +35,14 @@ namespace Shoe_Project_V2.View
                 form.Dock = DockStyle.None;
                 form.TopLevel = false;
                 form.BackColor = Color.White;
-                form.Show();          
+                form.Show();
             }
             else
             {
-                form =(Form)Application.OpenForms[form.Name];
-              
+                form = (Form)Application.OpenForms[form.Name];
+
             }
-            panel2.Controls.Add(form);      
+            panel2.Controls.Add(form);
             this.BackColor = Color.White;
             label1.Text = form.Name;
             controlMenuW();
@@ -46,6 +53,7 @@ namespace Shoe_Project_V2.View
 
         private void Anaform_Load(object sender, EventArgs e)
         {
+
             panel1.BringToFront();
             panel2.Size = this.Size;
 
@@ -54,8 +62,8 @@ namespace Shoe_Project_V2.View
         {
             SayfaGetir(new Ayakkabi_Form());
         }
-  
-     
+
+
 
         private void musteriler_btn_Click(object sender, EventArgs e)
         {
@@ -76,7 +84,7 @@ namespace Shoe_Project_V2.View
         {
             SayfaGetir(new Numara_Form());
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
             controlMenuW();
@@ -86,13 +94,13 @@ namespace Shoe_Project_V2.View
             if (panel1.Height > 50)
             {
                 panel1.Size = button1.Size;
-               
-                   panel2.Location = new Point(70, 30);
+
+                panel2.Location = new Point(70, 30);
             }
             else
             {
                 panel1.Size = new Size(200, 5000);
-                    panel2.Location = new Point(panel1.Width + 20, 30);
+                panel2.Location = new Point(panel1.Width + 20, 30);
             }
         }
 

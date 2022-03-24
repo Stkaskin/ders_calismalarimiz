@@ -25,13 +25,14 @@ namespace Shoe_Project_V2.Model.Model_Database
         public Nullable<int> numara_ID { get; set; }
         public Nullable<int> renk_ID { get; set; }
         public Nullable<int> marka_ID { get; set; }
+        public Nullable<bool> aktif { get; set; }
         public Nullable<int> fiyat { get; set; }
     
         public virtual Marka Marka { get; set; }
-        public virtual Renk Renk { get; set; }
-        public virtual Urun_Detay Urun_Detay { get; set; }
         public virtual Numara Numara { get; set; }
+        public virtual Renk Renk { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Satis_Detay> Satis_Detay { get; set; }
+        public virtual Urun_Detay Urun_Detay { get; set; }
     }
 }

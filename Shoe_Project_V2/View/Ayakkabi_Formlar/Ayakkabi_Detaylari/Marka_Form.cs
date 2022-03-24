@@ -1,4 +1,5 @@
 ﻿using Shoe_Project_V2.Model.Model_Database;
+using Shoe_Project_V2.Work.Log;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,10 +46,14 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar.Ayakkabi_Detaylari
 
         private void ekle_btn_Click(object sender, EventArgs e)
         {
-            db.Marka.Add(new Marka {marka_Ad=ad_e_tb.Text });
-            db.SaveChanges();
+            Marka marka = new Marka { marka_Ad = ad_e_tb.Text };
+           db.Marka.Add(marka);
+           db.SaveChanges();
             markalar = db.Marka.ToList();
             source.DataSource = markalar;
+            LogOperations_Worst log = new LogOperations_Worst();
+            log.Yeni(1, "Marka", marka.ID);
+
 
 
         }
@@ -62,11 +67,14 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar.Ayakkabi_Detaylari
 
         private void sil_btn_Click(object sender, EventArgs e)
         {
+            int id_Tut = secili_marka.ID;
             db.Marka.Remove(secili_marka);
             db.SaveChanges();
             secili_marka = new Marka();
             markalar = db.Marka.ToList();
             source.DataSource = markalar;
+            LogOperations_Worst log = new LogOperations_Worst();
+            log.Yeni(3, "Marka", id_Tut);
 
         }
 
@@ -77,6 +85,8 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar.Ayakkabi_Detaylari
             secili_marka = new Marka();
             markalar = db.Marka.ToList();
             source.DataSource = markalar;
+            LogOperations_Worst log = new LogOperations_Worst();
+            log.Yeni(2, "Marka", secili_marka.ID);
         }
     }
 }

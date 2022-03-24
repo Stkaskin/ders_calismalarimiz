@@ -1,5 +1,9 @@
 ﻿using Shoe_Project_V2.Model.Model_Database;
 using Shoe_Project_V2.View;
+using Shoe_Project_V2.View.Ayakkabi_Formlar.Ayakkabi_Detaylari;
+using Shoe_Project_V2.View.Cop_Kutusu_Formlar;
+using Shoe_Project_V2.View.Log_Formlar;
+using Shoe_Project_V2.View.Satis_Formlar;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +24,7 @@ namespace Shoe_Project_V2
             db.Database.CreateIfNotExists();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Anaform());
+            Application.Run(new Cop_Kutusu_Form());
    
         }
     }

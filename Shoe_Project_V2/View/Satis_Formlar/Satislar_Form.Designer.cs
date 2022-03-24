@@ -42,6 +42,7 @@ namespace Shoe_Project_V2.View.Satis_Formlar
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(599, 458);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // yeni_btn
             // 
@@ -61,6 +62,7 @@ namespace Shoe_Project_V2.View.Satis_Formlar
             this.button2.TabIndex = 6;
             this.button2.Text = "Detaylı Görüntüle";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Satislar_Form
             // 

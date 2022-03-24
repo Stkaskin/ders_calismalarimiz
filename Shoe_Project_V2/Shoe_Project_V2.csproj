@@ -55,6 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\BindigSoruceO.cs" />
+    <Compile Include="Model\Model_Database\Log.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Model_Database\Marka.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -130,6 +134,18 @@
     <Compile Include="View\Ayakkabi_Formlar\Ayakkabi_Form.Designer.cs">
       <DependentUpon>Ayakkabi_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Cop_Kutusu_Formlar\Cop_Kutusu_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Cop_Kutusu_Formlar\Cop_Kutusu_Form.Designer.cs">
+      <DependentUpon>Cop_Kutusu_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Log_Formlar\Log_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Log_Formlar\Log_Form.Designer.cs">
+      <DependentUpon>Log_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Musteri_Formlar\Musteriler_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +164,9 @@
     <Compile Include="View\Satis_Formlar\Satis_Detay_Form.Designer.cs">
       <DependentUpon>Satis_Detay_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Work\Data\SourceOperations.cs" />
+    <Compile Include="Work\Interface\ILog.cs" />
+    <Compile Include="Work\Log\LogOperations.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -171,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Ayakkabi_Formlar\Ayakkabi_Form.resx">
       <DependentUpon>Ayakkabi_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Cop_Kutusu_Formlar\Cop_Kutusu_Form.resx">
+      <DependentUpon>Cop_Kutusu_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Log_Formlar\Log_Form.resx">
+      <DependentUpon>Log_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Musteri_Formlar\Musteriler_Form.resx">
       <DependentUpon>Musteriler_Form.cs</DependentUpon>
@@ -202,9 +227,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Work\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model\Model_Database\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

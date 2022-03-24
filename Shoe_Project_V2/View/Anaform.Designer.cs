@@ -93,7 +93,7 @@ namespace Shoe_Project_V2.View
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(20, 562);
+            this.button3.Location = new System.Drawing.Point(20, 510);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 42);
             this.button3.TabIndex = 5;

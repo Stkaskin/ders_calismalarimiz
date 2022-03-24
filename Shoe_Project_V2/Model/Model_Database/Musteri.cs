@@ -24,6 +24,7 @@ namespace Shoe_Project_V2.Model.Model_Database
         public string musteri_AD { get; set; }
         public string musteri_Tel { get; set; }
         public string musteri_Adres { get; set; }
+        public Nullable<bool> aktif { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Satislar> Satislar { get; set; }

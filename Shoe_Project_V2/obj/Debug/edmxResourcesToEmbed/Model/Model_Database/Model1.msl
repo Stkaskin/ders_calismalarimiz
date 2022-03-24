@@ -4,69 +4,19 @@
     <EntitySetMapping Name="Marka">
       <EntityTypeMapping TypeName="Shoe_DbModel.Marka">
         <MappingFragment StoreEntitySet="Marka">
-          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="marka_Ad" ColumnName="marka_Ad" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Musteri">
       <EntityTypeMapping TypeName="Shoe_DbModel.Musteri">
         <MappingFragment StoreEntitySet="Musteri">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="musteri_AD" ColumnName="musteri_AD" />
-          <ScalarProperty Name="musteri_Tel" ColumnName="musteri_Tel" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
           <ScalarProperty Name="musteri_Adres" ColumnName="musteri_Adres" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Renk">
-      <EntityTypeMapping TypeName="Shoe_DbModel.Renk">
-        <MappingFragment StoreEntitySet="Renk">
+          <ScalarProperty Name="musteri_Tel" ColumnName="musteri_Tel" />
+          <ScalarProperty Name="musteri_AD" ColumnName="musteri_AD" />
           <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="renk_Ad" ColumnName="renk_Ad" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Satislar">
-      <EntityTypeMapping TypeName="Shoe_DbModel.Satislar">
-        <MappingFragment StoreEntitySet="Satislar">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="tutar" ColumnName="tutar" />
-          <ScalarProperty Name="musteri_ID" ColumnName="musteri_ID" />
-          <ScalarProperty Name="tarih" ColumnName="tarih" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="Shoe_DbModel.sysdiagrams">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="definition" ColumnName="definition" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Urun">
-      <EntityTypeMapping TypeName="Shoe_DbModel.Urun">
-        <MappingFragment StoreEntitySet="Urun">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="detay_ID" ColumnName="detay_ID" />
-          <ScalarProperty Name="numara_ID" ColumnName="numara_ID" />
-          <ScalarProperty Name="renk_ID" ColumnName="renk_ID" />
-          <ScalarProperty Name="marka_ID" ColumnName="marka_ID" />
-          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Urun_Detay">
-      <EntityTypeMapping TypeName="Shoe_DbModel.Urun_Detay">
-        <MappingFragment StoreEntitySet="Urun_Detay">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="urun_ad" ColumnName="urun_ad" />
-          <ScalarProperty Name="urun_Ekleme_Tarihi" ColumnName="urun_Ekleme_Tarihi" />
-          <ScalarProperty Name="urun_Temsilcisi" ColumnName="urun_Temsilcisi" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -74,6 +24,14 @@
       <EntityTypeMapping TypeName="Shoe_DbModel.Numara">
         <MappingFragment StoreEntitySet="Numara">
           <ScalarProperty Name="numara_" ColumnName="numara_" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Renk">
+      <EntityTypeMapping TypeName="Shoe_DbModel.Renk">
+        <MappingFragment StoreEntitySet="Renk">
+          <ScalarProperty Name="renk_Ad" ColumnName="renk_Ad" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -86,6 +44,63 @@
           <ScalarProperty Name="satisid" ColumnName="satisid" />
           <ScalarProperty Name="urunid" ColumnName="urunid" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Satislar">
+      <EntityTypeMapping TypeName="Shoe_DbModel.Satislar">
+        <MappingFragment StoreEntitySet="Satislar">
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="musteri_ID" ColumnName="musteri_ID" />
+          <ScalarProperty Name="tutar" ColumnName="tutar" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Shoe_DbModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urun">
+      <EntityTypeMapping TypeName="Shoe_DbModel.Urun">
+        <MappingFragment StoreEntitySet="Urun">
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+          <ScalarProperty Name="marka_ID" ColumnName="marka_ID" />
+          <ScalarProperty Name="renk_ID" ColumnName="renk_ID" />
+          <ScalarProperty Name="numara_ID" ColumnName="numara_ID" />
+          <ScalarProperty Name="detay_ID" ColumnName="detay_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urun_Detay">
+      <EntityTypeMapping TypeName="Shoe_DbModel.Urun_Detay">
+        <MappingFragment StoreEntitySet="Urun_Detay">
+          <ScalarProperty Name="urun_Temsilcisi" ColumnName="urun_Temsilcisi" />
+          <ScalarProperty Name="urun_Ekleme_Tarihi" ColumnName="urun_Ekleme_Tarihi" />
+          <ScalarProperty Name="urun_ad" ColumnName="urun_ad" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log">
+      <EntityTypeMapping TypeName="Shoe_DbModel.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="tbl_id" ColumnName="tbl_id" />
+          <ScalarProperty Name="yeni" ColumnName="yeni" />
+          <ScalarProperty Name="eski" ColumnName="eski" />
+          <ScalarProperty Name="zaman" ColumnName="zaman" />
+          <ScalarProperty Name="islem" ColumnName="islem" />
+          <ScalarProperty Name="tbl_name" ColumnName="tbl_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

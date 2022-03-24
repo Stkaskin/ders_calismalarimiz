@@ -36,6 +36,9 @@ namespace Shoe_Project_V2.View.Satis_Formlar
             source.DataSource = satislar;
             dataGridView1.DataSource = source;
             //hıza direct etki eder
+            dataGridView1.Columns[nameof(secili_satis.Musteri)].Visible = false;
+            dataGridView1.Columns[nameof(secili_satis.Satis_Detay)].Visible = false;
+
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
             // or even better, use .DisableResizing. Most time consuming enum is DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
 
@@ -57,33 +60,40 @@ namespace Shoe_Project_V2.View.Satis_Formlar
             Form form = new Satis_Detay_Form();
             form.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Satis_Detay_Form form = new Satis_Detay_Form();
+            form.Cek_Satislar(secili_satis);
+            form.ShowDialog();
+        }
         /*
 *  private void ekle_btn_Click(object sender, EventArgs e)
-       {
-        //   db.Satislar.Add(new Satislar { tutar = ad_e_tb.Text });
-           db.SaveChanges();
-           satislar = db.Satislar.ToList();
-           source.DataSource = satislar;
+{
+//   db.Satislar.Add(new Satislar { tutar = ad_e_tb.Text });
+  db.SaveChanges();
+  satislar = db.Satislar.ToList();
+  source.DataSource = satislar;
 
 
-       }
-       private void sil_btn_Click(object sender, EventArgs e)
-       {
-           db.Satislar.Remove(secili_satis);
-           db.SaveChanges();
-           secili_satis = new Satislar();
-           satislar = db.Satislar.ToList();
-           source.DataSource = satislar;
+}
+private void sil_btn_Click(object sender, EventArgs e)
+{
+  db.Satislar.Remove(secili_satis);
+  db.SaveChanges();
+  secili_satis = new Satislar();
+  satislar = db.Satislar.ToList();
+  source.DataSource = satislar;
 
-       }
+}
 
-       private void guncelle_btn_Click(object sender, EventArgs e)
-       {
-       //    secili_satis.marka_Ad = ad_g_tb.Text;
-           db.SaveChanges();
-           secili_satis = new Satislar();
-           satislar = db.Satislar.ToList();
-           source.DataSource = satislar;
-       }*/
+private void guncelle_btn_Click(object sender, EventArgs e)
+{
+//    secili_satis.marka_Ad = ad_g_tb.Text;
+  db.SaveChanges();
+  secili_satis = new Satislar();
+  satislar = db.Satislar.ToList();
+  source.DataSource = satislar;
+}*/
     }
 }

@@ -94,6 +94,8 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
 
             ListeCek_Combo_Aktar();
             datagrid_operasyonları();
+            Work.Log.LogOperations operations = new Work.Log.LogOperations();
+            operations.Add(new Marka());
 
 
 
@@ -103,7 +105,9 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
             ayakkabilar = (from a in db.Urun
                                /*  // ilişkiyi elle kurmak istersek bunları kullanabiliriz
                               //  join b in db.Urun_Detay on a.detay_ID equals b.ID */
-                           select new ayakkabi_data
+                           where a.aktif==true
+                           select new ayakkabi_data 
+                           
                            {
                                ID = a.ID,
                                Ürün_Adi = a.Urun_Detay.urun_ad,
@@ -161,8 +165,9 @@ namespace Shoe_Project_V2.View.Ayakkabi_Formlar
         {
             Urun_Detay detay = db.Urun_Detay.Find(Convert.ToInt32(urun_sil.Ürün_ID));
             Urun urun = db.Urun.Find(urun_guncelle.ID);
-            db.Urun.Remove(urun);
-            db.Urun_Detay.Remove(detay);
+            urun.aktif = false;
+          //  db.Urun_Detay.Remove(detay);
+         //   db.Urun.Remove(urun);
             db.SaveChanges();
             ayakkabilar_doldur();
             source.DataSource = ayakkabilar;
